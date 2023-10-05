@@ -22,10 +22,80 @@
     <meta name="msapplication-TileColor" content="#FB5607">
     <meta name="msapplication-TileImage" content="./assets/images/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#FB5607">
+    <link rel="stylesheet" href="./assets/scss/style.css">
 </head>
 
-<body>
+<body id="login" class="d-flex align-items-center justify-content-center px-40 bg-neutral-7">
+    <div class="container w-1000 d-flex align-items-center flex-wrap bg-neutral-8 rounded-8">
+        <form action="" class="flex-50 p-40">
+            <h1>Sign In</h1>
 
+            <p class="error text-sm text-danger-main mt-20"></p>
+
+            <input type="text" name="id" id="id" placeholder="Employee ID" class="mt-20" required>
+
+            <div class="input-password mt-20">
+                <input type="password" name="password" id="password" placeholder="Password" required>
+
+                <button class="show-pass show" onclick="showPass(event)">
+                    <img src="./assets/images/icons/show-password.svg" alt="Show / Hide Password">
+                </button>
+            </div>
+
+            <button class="btn btn-full bg-primary-main text-neutral-8 mt-20">Sign In</button>
+
+            <a href="#" class="d-block mt-20 text-sm text-neutral-3 text-center">Forget Password ?</a>
+        </form>
+
+        <img src="./assets/images/sign-in-image.webp" alt="Illustration" width="490" height="560"
+            class="illustration flex-50 obj-cover rounded-right-8">
+    </div>
+    <script>
+        const id = 12345
+        const password = "abcde";
+
+        const error = document.querySelector('.error');
+
+
+        document.querySelector('.btn').addEventListener('click', function (event) {
+            event.preventDefault();
+
+            let inputId = document.getElementById('id').value;
+            let inputPassword = document.getElementById('password').value;
+
+            if (inputId.length === 0) {
+                error.innerText = "ID Must Be Filled"
+            } else if (inputPassword.length === 0) {
+                error.innerText = "Password Must Be Filled"
+            } else if (inputId !== id || inputPassword !== password) {
+                error.innerText = "ID or Password Wrong";
+            } else {
+                console.log('masuk')
+                error.innerText = "";
+            }
+        });
+
+        function showPass(event) {
+            event.preventDefault();
+
+            console.log('masuk')
+            let inputPassword = document.getElementById('password');
+            let btn = document.querySelector('.show-pass');
+
+            if (btn.classList.contains('show')) {
+                btn.querySelector('img').src = "./assets/images/icons/hide-password.svg";
+                btn.classList.remove('show');
+                btn.classList.add('hide');
+                inputPassword.setAttribute('type', 'text');
+            } else {
+
+                btn.querySelector('img').src = "./assets/images/icons/show-password.svg";
+                btn.classList.add('show');
+                btn.classList.remove('hide');
+                inputPassword.setAttribute('type', 'password');
+            }
+        }
+    </script>
 </body>
 
 </html>
