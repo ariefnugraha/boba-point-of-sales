@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Satoshi", sans-serif;
+  color: #121212;
+}
+
+a {
+  text-decoration: none;
+  color: #121212;
+}
+
+.bg-neutral-7 {
+  background: #F5F4F7;
+}
+
+.bg-neutral-8 {
+  background: #FFFFFF;
+}
+
+.bg-primary-main {
+  background: #FB5607;
+}
+
+.text-neutral-3 {
+  color: #4A4A4A;
+}
+
+.text-neutral-8 {
+  color: #FFFFFF;
+}
+
+.text-danger-main {
+  color: #F20B0B;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.flex-50 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.col-gap-20 {
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+
+.w-1000 {
+  width: 1000px;
+}
+
+.p-40 {
+  padding: 40px;
+}
+
+.px-40 {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+input:not([type=checkbox]),
+input:not([type=radio]),
+input:not([type=file]) {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  background: #F5F4F7;
+  border-radius: 8px;
+  border: solid 1.5px #E8E8E8;
+  font-size: 16px;
+  font-family: "Satoshi", sans-serif;
+  outline: none;
+  transition: 0.5s;
+}
+input:not([type=checkbox]):focus,
+input:not([type=radio]):focus,
+input:not([type=file]):focus {
+  border-color: #FB5607;
+}
+
+.input-password {
+  position: relative;
+}
+.input-password input {
+  padding: 12px 40px 12px 20px;
+}
+.input-password button {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.obj-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.rounded-8 {
+  border-radius: 8px;
+}
+
+.rounded-right-8 {
+  border-radius: 0 8px 8px 0;
+}
+
+.btn {
+  padding: 12px 20px;
+  border-radius: 100px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "Satoshi", sans-serif;
+}
+.btn.btn-full {
+  width: 100%;
+}
+
+.text-xs {
+  font-size: 12px;
+}
+
+.text-sm {
+  font-size: 14px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.d-block {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .w-1000 {
+    width: 100%;
+  }
+  .flex-50 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  #login .illustration {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */
