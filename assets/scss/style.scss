@@ -1,0 +1,224 @@
+// 1. VARIABLE
+$neutral-1: #121212;
+$neutral-2: #313131;
+$neutral-3: #4A4A4A;
+$neutral-4: #868686;
+$neutral-5: #B7B7B7;
+$neutral-6: #E8E8E8;
+$neutral-7: #F5F4F7;
+$neutral-8: #FFFFFF;
+
+$primary-main: #FB5607;
+$primary-surface: #FEDDCD;
+$primary-border: #FDAA83;
+$primary-hover: #FC7230;
+$primary-focus: #F7A57D;
+$primary-press: #7D2B03;
+
+$danger-main: #F20B0B;
+$danger-surface: #FCCECE;
+$danger-border: #F88585;
+$danger-hover: #F51919;
+$danger-focus: #F37F7F;
+$danger-press: #E00A0A;
+
+$success-main: #4C956C;
+$success-surface: #DBEAE1;
+$success-border: #C3DCCE;
+$success-hover: #336348;
+$success-focus: #A0C4B0;
+$success-press: #193224;
+
+$info-main: #0081A7;
+$info-surface: #CCE6ED;
+$info-border: #AAD5E2;
+$info-hover: #006B8B;
+$info-focus: #7ABACD;
+$info-press: #004053;
+
+// 2. UTILITIZE
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Satoshi", sans-serif;
+    color: $neutral-1;
+}
+
+a {
+    text-decoration: none;
+    color: $neutral-1;
+}
+
+
+// 3. COLORS
+
+// 3.1 Background Color
+.bg-neutral-7 {
+    background: $neutral-7;
+}
+
+.bg-neutral-8 {
+    background: $neutral-8;
+}
+
+.bg-primary-main {background: $primary-main;}
+
+// 3.2. Text Color
+.text-neutral-3 {color: $neutral-3;}
+.text-neutral-8 {color: $neutral-8;}
+.text-danger-main {color: $danger-main;}
+// 4. FLEX
+
+// 4.1 Display Flex
+.d-flex {
+    display: flex;
+}
+
+// 4.2 Flex Wrap
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+// 4.3 Align Items
+.align-items-center {
+    align-items: center;
+}
+
+// 4.4 Justify Content
+.justify-content-center {
+    justify-content: center;
+}
+
+// 4.5 Flex Basis
+.flex-50 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+// 4.6 Column Gap
+.col-gap-20 {
+    column-gap: 20px;
+}
+
+// 5. WIDTH
+.w-1000 {
+    width: 1000px;
+}
+
+// 6. PADDING
+.p-40 {
+    padding: 40px;
+}
+
+.px-40 {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+// 7. Input
+input:not([type="checkbox"]),
+input:not([type="radio"]),
+input:not([type="file"]) {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    background: $neutral-7;
+    border-radius: 8px;
+    border: solid 1.5px $neutral-6;
+    font-size: 16px;
+    font-family: "Satoshi", sans-serif;
+    outline: none;
+    transition: .5s;
+
+    &:focus {
+        border-color: $primary-main;
+    }
+}
+
+.input-password {
+    position: relative;
+
+    input {
+        padding: 12px 40px 12px 20px;
+    }
+
+    button {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        padding: 0;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+// 8. MARGIN
+.mt-20 {
+    margin-top: 20px;
+}
+
+//9. OBJECT FIT
+.obj-cover {
+    object-fit: cover;
+}
+
+// 10. BORDER
+
+// 10.1 Border Radius
+.rounded-8 {
+    border-radius: 8px;
+}
+
+.rounded-right-8 {
+    border-radius: 0 8px 8px 0;
+}
+
+// 11. BUTTON
+.btn {
+    padding: 12px 20px;
+    border-radius: 100px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: "Satoshi", sans-serif;
+
+    &.btn-full {
+        width: 100%;
+    }
+}
+
+// 12. TYPOGRAPHY
+
+// 12.1 FONT SIZE
+.text-xs {font-size: 12px;}
+.text-sm {font-size: 14px;}
+
+// 12.2 TEXT ALIGN
+.text-center {text-align: center;}
+
+// 13. DISPLAY
+.d-block {display: block;}
+
+// RESPONSIVE
+@media (max-width: 767px) {
+    .w-1000 {width: 100%;}
+
+    .flex-50 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    #login .illustration {display: none;}
+}
+
