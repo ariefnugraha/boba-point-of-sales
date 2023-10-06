@@ -69,6 +69,10 @@ p {
   justify-content: center;
 }
 
+.justify-content-between {
+  justify-content: space-between;
+}
+
 .flex-50 {
   flex: 0 0 50%;
   max-width: 50%;
@@ -94,6 +98,10 @@ p {
 .px-40 {
   padding-left: 40px;
   padding-right: 40px;
+}
+
+.pb-8 {
+  padding-bottom: 8px;
 }
 
 input:not([type=checkbox]),
@@ -159,6 +167,15 @@ input[type=number] {
   border-radius: 8px;
 }
 
+.border-bottom {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+.border-neutral-6 {
+  border-color: #E8E8E8;
+}
+
 .rounded-right-8 {
   border-radius: 0 8px 8px 0;
 }
@@ -191,6 +208,10 @@ input[type=number] {
 
 .text-center {
   text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .d-block {
