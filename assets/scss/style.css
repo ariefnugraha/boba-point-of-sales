@@ -198,12 +198,22 @@ input[type=number] {
 }
 
 @media (max-width: 767px) {
+  .p-40 {
+    padding: 20px;
+  }
+  .px-40 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   .w-1000 {
     width: 100%;
   }
   .flex-50 {
     flex: 0 0 100%;
     max-width: 100%;
+  }
+  h1.text-2x {
+    font-size: 20px;
   }
   #login .illustration {
     display: none;
