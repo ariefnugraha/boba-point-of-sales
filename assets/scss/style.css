@@ -14,6 +14,13 @@ a {
   color: #121212;
 }
 
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
 .bg-neutral-7 {
   background: #F5F4F7;
 }
@@ -24,6 +31,10 @@ a {
 
 .bg-primary-main {
   background: #FB5607;
+}
+
+.text-neutral-2 {
+  color: #313131;
 }
 
 .text-neutral-3 {
@@ -72,6 +83,10 @@ a {
   width: 1000px;
 }
 
+.w-600 {
+  width: 600px;
+}
+
 .p-40 {
   padding: 40px;
 }
@@ -117,8 +132,22 @@ input:not([type=file]):focus {
   cursor: pointer;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .mt-20 {
   margin-top: 20px;
+}
+
+.mt-8 {
+  margin-top: 8px;
 }
 
 .obj-cover {
@@ -154,6 +183,10 @@ input:not([type=file]):focus {
 
 .text-sm {
   font-size: 14px;
+}
+
+.text-2x {
+  font-size: 24px;
 }
 
 .text-center {

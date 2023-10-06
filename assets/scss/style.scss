@@ -53,6 +53,13 @@ a {
     color: $neutral-1;
 }
 
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
 
 // 3. COLORS
 
@@ -65,12 +72,27 @@ a {
     background: $neutral-8;
 }
 
-.bg-primary-main {background: $primary-main;}
+.bg-primary-main {
+    background: $primary-main;
+}
 
 // 3.2. Text Color
-.text-neutral-3 {color: $neutral-3;}
-.text-neutral-8 {color: $neutral-8;}
-.text-danger-main {color: $danger-main;}
+.text-neutral-2 {
+    color: $neutral-2;
+}
+
+.text-neutral-3 {
+    color: $neutral-3;
+}
+
+.text-neutral-8 {
+    color: $neutral-8;
+}
+
+.text-danger-main {
+    color: $danger-main;
+}
+
 // 4. FLEX
 
 // 4.1 Display Flex
@@ -111,6 +133,10 @@ a {
 // 5. WIDTH
 .w-1000 {
     width: 1000px;
+}
+
+.w-600 {
+    width: 600px;
 }
 
 // 6. PADDING
@@ -161,9 +187,23 @@ input:not([type="file"]) {
     }
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 // 8. MARGIN
 .mt-20 {
     margin-top: 20px;
+}
+
+.mt-8 {
+    margin-top: 8px;
 }
 
 //9. OBJECT FIT
@@ -201,24 +241,40 @@ input:not([type="file"]) {
 // 12. TYPOGRAPHY
 
 // 12.1 FONT SIZE
-.text-xs {font-size: 12px;}
-.text-sm {font-size: 14px;}
+.text-xs {
+    font-size: 12px;
+}
+
+.text-sm {
+    font-size: 14px;
+}
+
+.text-2x {
+    font-size: 24px;
+}
 
 // 12.2 TEXT ALIGN
-.text-center {text-align: center;}
+.text-center {
+    text-align: center;
+}
 
 // 13. DISPLAY
-.d-block {display: block;}
+.d-block {
+    display: block;
+}
 
 // RESPONSIVE
 @media (max-width: 767px) {
-    .w-1000 {width: 100%;}
+    .w-1000 {
+        width: 100%;
+    }
 
     .flex-50 {
         flex: 0 0 100%;
         max-width: 100%;
     }
 
-    #login .illustration {display: none;}
+    #login .illustration {
+        display: none;
+    }
 }
-
