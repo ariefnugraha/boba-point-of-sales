@@ -1,0 +1,238 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+// Font Size
+$custom-font-sizes: (
+    1: 1.75rem,
+    2: 1.5rem,
+    3: 1.25rem,
+    4: 1rem,
+    5: .875rem,
+    6: .75rem
+);
+
+$font-sizes: map-merge($font-sizes, $custom-font-sizes);
+
+$font-family-sans-serif: "Satoshi", sans-serif;
+$neutral-10: #fff;
+$neutral-20: #F5F4F7;
+$neutral-30: #E8E8E8;
+$neutral-40: #B7B7B7;
+$neutral-50: #868686;
+$neutral-60: #4A4A4A;
+$neutral-70: #313131;
+$neutral-80: #121212;
+
+$orange-surface: #FEDDCD;
+$orange-border: #FDAA83;
+$orange-main: #FB5607;
+$orange-hover: #FC7230;
+$orange-focus: #F7A57D;
+$orange-press: #7D2B03;
+
+$success-main: #4C956C;
+$success-surface: #DBEAE1;
+$success-border: #C3DCCE;
+$success-hover: #336348;
+$success-press: #193224;
+$success-focus: #A0C4B0;
+
+$danger-surface: #FCCECE;
+$danger-border: #F88585;
+$danger-main: #F20B0B;
+$danger-hover: #F51919;
+$danger-focus: #F37F7F;
+$danger-press: #E00A0A;
+
+// Colors
+$neutral-color: (
+    "neutral-10": $neutral-10,   "neutral-20": $neutral-20,
+    "neutral-30": $neutral-30,
+    "neutral-40": $neutral-40,
+    "neutral-50": $neutral-50,
+    "neutral-60": $neutral-60,
+    "neutral-70": $neutral-70,
+    "neutral-80": $neutral-80
+);
+
+$orange: (
+    "orange-surface": #FEDDCD,
+    "orange-border": #FDAA83,
+    "orange-main": #FB5607,
+    "orange-hover": #FC7230,
+    "orange-focus": #F7A57D,
+    "orange-press": #7D2B03
+);
+
+$success: (
+    "success-main": $success-main,
+    "success-surface": $success-surface,
+    "success-border": $success-border,
+    "success-hover": $success-hover,
+    "success-focus": $success-focus,
+    "success-press": $success-press
+);
+
+$danger: (
+    "danger-main": $danger-main,
+    "danger-surface": $danger-surface,
+    "danger-border": $danger-border,
+    "danger-hover": $danger-hover,
+    "danger-focus": $danger-focus,
+    "danger-press": $danger-press
+);
+
+// Custom Radio
+$form-check-input-width: 24px;
+$form-check-input-checked-bg-color: $orange-main;
+$form-check-input-checked-border-color: transparent;
+$form-check-input-indeterminate-bg-color: $orange-main;
+$form-check-input-indeterminate-border-color: transparent;
+
+
+$theme-colors: map-merge($theme-colors, $neutral-color);
+$theme-colors: map-merge($theme-colors, $orange);
+$theme-colors: map-merge($theme-colors, $success);
+$theme-colors: map-merge($theme-colors, $danger);
+
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+h1,h2,h3,h4,h5,p {margin: 0;}
+
+.sidebar-menu  {
+    .nav-item:hover {
+        transition: .5s;
+        background: $black;
+    }
+}
+
+
+// 4 Input, Select, Textarea
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"],
+select,
+textarea {
+    background: $neutral-20;
+    border-left: none;
+    border-color: $neutral-30;
+
+    &:focus {
+        box-shadow: none;
+        outline: none;
+    }
+
+    & + .input-group-text {
+        background: red;
+        svg path {
+            fill: red;
+        }
+    }
+}
+
+// 5. Custom Radio for Radio Pill
+.radio-pill,
+.radio-pill-2 {
+    cursor: pointer;
+}
+
+input[type="radio"]:checked + .radio-pill, 
+input[type="radio"]:checked + .radio-pill-2 {
+    background: $orange-main;
+    color: $neutral-10 !important;
+}
+
+
+// 1 Menu Page
+// 1.1 List Categories
+.list-categories {
+    .nav-link {
+        text-align: left;
+        cursor: pointer;
+        transition: .5s;
+        color: $neutral-50;
+        padding: 1rem;
+        border: solid 1px $neutral-50;
+
+        svg path {fill: $neutral-50;}
+        &.active,
+        &:hover {
+            background: #FEDDCD;
+            color: $black;
+            border-color: #FEDDCD;
+
+            svg path {fill: $black;}
+            .title {font-weight: 600;}
+        }
+    }
+}
+
+// 1.2 Search
+.search-bar {
+    .input-group-text {
+        border: none;
+    }
+    .search-button {
+        width: 48px;
+        height: 48px;
+    }
+
+}
+
+// 1.3 Menu Item
+.menu-container .item {
+    cursor: pointer;
+
+    img {
+        height: 186px;
+        object-fit: cover;
+    }
+
+    .menu-title {
+        height: 50px;
+    }
+
+    .menu-description {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+// 1.4 Search Bar in Menu
+.search-bar {
+    .search-icon {
+        top: 20px;
+        left: 20px;
+        transform: translateY(-50%);
+    }
+}
+
+// 1.5 Increase and Decrease Amount of Order
+.minus-amount,
+.add-amount {
+    width: 32px;
+    height: 32px;
+
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+// 1.6 List Order
+#list-order {
+    top: 20px;
+    height: 500px;
+    overflow-y: auto;
+}
