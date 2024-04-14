@@ -2,6 +2,7 @@
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
 
+
 // Font Size
 $custom-font-sizes: (
     1: 1.75rem,
@@ -15,6 +16,8 @@ $custom-font-sizes: (
 $font-sizes: map-merge($font-sizes, $custom-font-sizes);
 
 $font-family-sans-serif: "Satoshi", sans-serif;
+
+// Colors
 $neutral-10: #fff;
 $neutral-20: #F5F4F7;
 $neutral-30: #E8E8E8;
@@ -45,9 +48,9 @@ $danger-hover: #F51919;
 $danger-focus: #F37F7F;
 $danger-press: #E00A0A;
 
-// Colors
 $neutral-color: (
-    "neutral-10": $neutral-10,   "neutral-20": $neutral-20,
+    "neutral-10": $neutral-10,
+    "neutral-20": $neutral-20,
     "neutral-30": $neutral-30,
     "neutral-40": $neutral-40,
     "neutral-50": $neutral-50,
@@ -83,6 +86,9 @@ $danger: (
     "danger-press": $danger-press
 );
 
+
+
+
 // Custom Radio
 $form-check-input-width: 24px;
 $form-check-input-checked-bg-color: $orange-main;
@@ -96,13 +102,48 @@ $theme-colors: map-merge($theme-colors, $orange);
 $theme-colors: map-merge($theme-colors, $success);
 $theme-colors: map-merge($theme-colors, $danger);
 
+// Spacer
+$spacers: (
+    0: 0,
+    1: 0.25rem,
+    2: .5rem,
+    3: .75rem,
+    4: 1rem,
+    5: 1.25rem,
+    6: 1.5rem,
+    7: 2rem,
+    8: 2.5rem
+);
+
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
 
-h1,h2,h3,h4,h5,p {margin: 0;}
 
-.sidebar-menu  {
+
+// $utilities: map-merge(
+//   $utilities,
+//   (
+//     "margin": (
+//         responsive: true,
+//         property: margin,
+//         class: m,
+//         values: map-merge($spacers, (auto: auto))
+//     ),
+//   )
+// );
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    margin: 0;
+}
+
+.sidebar-menu {
     .nav-item:hover {
         transition: .5s;
         background: $black;
@@ -132,12 +173,28 @@ textarea {
         outline: none;
     }
 
-    & + .input-group-text {
+    &+.input-group-text {
         background: red;
+
         svg path {
             fill: red;
         }
     }
+}
+
+// 4.1 Hide default icon for input type date
+input[type="date"] {
+    padding-left: 3rem;
+
+    &::-webkit-calendar-picker-indicator {
+        display: none;
+    }
+}
+
+.icon-date {
+    top: 50%;
+    left: 1.25rem;
+    transform: translateY(-50%);
 }
 
 // 5. Custom Radio for Radio Pill
@@ -146,11 +203,12 @@ textarea {
     cursor: pointer;
 }
 
-input[type="radio"]:checked + .radio-pill, 
-input[type="radio"]:checked + .radio-pill-2 {
+input[type="radio"]:checked+.radio-pill,
+input[type="radio"]:checked+.radio-pill-2 {
     background: $orange-main;
     color: $neutral-10 !important;
 }
+
 
 
 // 1 Menu Page
@@ -164,15 +222,23 @@ input[type="radio"]:checked + .radio-pill-2 {
         padding: 1rem;
         border: solid 1px $neutral-50;
 
-        svg path {fill: $neutral-50;}
+        svg path {
+            fill: $neutral-50;
+        }
+
         &.active,
         &:hover {
             background: #FEDDCD;
             color: $black;
             border-color: #FEDDCD;
 
-            svg path {fill: $black;}
-            .title {font-weight: 600;}
+            svg path {
+                fill: $black;
+            }
+
+            .title {
+                font-weight: 600;
+            }
         }
     }
 }
@@ -182,6 +248,7 @@ input[type="radio"]:checked + .radio-pill-2 {
     .input-group-text {
         border: none;
     }
+
     .search-button {
         width: 48px;
         height: 48px;

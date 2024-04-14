@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'boba-icon';
-  src: url('../font/boba-icon.eot?11372047');
-  src: url('../font/boba-icon.eot?11372047#iefix') format('embedded-opentype'),
-       url('../font/boba-icon.woff2?11372047') format('woff2'),
-       url('../font/boba-icon.woff?11372047') format('woff'),
-       url('../font/boba-icon.ttf?11372047') format('truetype'),
-       url('../font/boba-icon.svg?11372047#boba-icon') format('svg');
+  src: url('../font/boba-icon.eot?37307951');
+  src: url('../font/boba-icon.eot?37307951#iefix') format('embedded-opentype'),
+       url('../font/boba-icon.woff2?37307951') format('woff2'),
+       url('../font/boba-icon.woff?37307951') format('woff'),
+       url('../font/boba-icon.ttf?37307951') format('truetype'),
+       url('../font/boba-icon.svg?37307951#boba-icon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'boba-icon';
-    src: url('../font/boba-icon.svg?11372047#boba-icon') format('svg');
+    src: url('../font/boba-icon.svg?37307951#boba-icon') format('svg');
   }
 }
 */

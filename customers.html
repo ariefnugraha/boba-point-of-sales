@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/grid.css">
+    <link rel="stylesheet" href="./css/boba-icon.css">
+    <link rel="stylesheet" href="./scss/custom-style.css">
+</head>
+
+<body>
+    <div class="row g-0 bg-neutral-20">
+        <div class="col-12 col-lg-1">
+            <aside class="sidebar-menu bg-orange-main p-3 position-fixed top-0 bottom-0">
+                <img src="./assets/img/logo.svg" alt="Logo" width="60" height="auto" class="d-block mx-auto">
+                <ul class="navbar-nav d-flex flex-column align-items-center mt-4">
+                    <li class="nav-item p-1 rounded">
+                        <a href="menu.html">
+                            <img src="./assets/img/icons/dashboard.svg" alt="Sidebar Menu" width="24">
+                        </a>
+                    </li>
+                    <li class="nav-item p-1 rounded mt-lg-5">
+                        <a href="order.html">
+                            <img src="./assets/img/icons/order.svg" alt="Sidebar Menu" width="24">
+                        </a>
+                    </li>
+                    <li class="nav-item p-1 rounded mt-lg-5">
+                        <a href="order.html">
+                            <img src="./assets/img/icons/inventory.svg" alt="Sidebar Menu" width="24">
+                        </a>
+                    </li>
+                    <li class="nav-item p-1 rounded mt-lg-5">
+                        <a href="order.html">
+                            <img src="./assets/img/icons/menu.svg" alt="Sidebar Menu" width="24">
+                        </a>
+                    </li>
+                    <li class="nav-item p-1 rounded mt-lg-5">
+                        <a href="order.html">
+                            <img src="./assets/img/icons/stats.svg" alt="Sidebar Menu" width="24">
+                        </a>
+                    </li>
+                    <li class="nav-item p-1 rounded mt-lg-5">
+                        <a href="order.html">
+                            <img src="./assets/img/icons/users.svg" alt="Sidebar Menu" width="24">
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+        <div class="col-12 col-lg-11 px-4 pb-4">
+            <!-- start name menu and profile-->
+            <section class="row justify-content-between align-items-stretch g-0 my-3">
+                <div class="col-lg bg-white px-3 py-2 rounded-start">
+                    <p id="current-date" class="fs-6 my-0 text-black text-opacity-75">Sun, 13 August 2023 11:50</p>
+                    <h1 class="fs-3 fw-semibold mt-2">Cashier</h1>
+                </div>
+                <div class="col-lg d-flex justify-content-end bg-white px-3 py-2 rounded-end">
+                    <div class="dropdown">
+                        <button class="btn d-flex align-items-center dropdown-toggle" type="button"
+                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="./assets/img/profile.jpg" alt="Profile" class="rounded-circle d-block me-2"
+                                width="36" height="36">
+                            Hi, <span class="fw-bold">Citra Agustina</span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+            <!-- end name menu and profile-->
+
+            <!-- Start Content-->
+            <div class="mt-3 bg-white p-4 rounded bg-white px-3 py-2 ">
+                <!-- Start add customer, download, search, filter-->
+                <div class="d-flex align-items-center column-gap-3">
+                    <button type="button"
+                        class="btn btn-orange-main d-flex align-items-center text-primary fw-bold column-gap-2 rounded-pill text-white">
+                        <i class="icon-add"></i>
+                        Add Customers
+                    </button>
+
+                    <a href="#"
+                        class="btn btn-success-main d-flex align-items-center text-primary fw-bold column-gap-2 rounded-pill text-white">
+                        <i class="icon-download"></i>
+                        Download
+                    </a>
+
+                    <div class="col d-flex align-items-center column-gap-2">
+                        <div class="input-group">
+                            <input type="text" name="search" id="search" class="form-control mt-2"
+                                placeholder="Search by ID, Name, Email. Phone Number">
+
+                        </div>
+                        <button type="button"
+                            class="btn rounded-circle btn-orange-main d-flex align-items-center justify-content-center text-white fw-bold"
+                            style="width: 48px; height: 48px;">
+                            <i class="icon-search"></i>
+                        </button>
+
+                        <button type="button"
+                            class="btn rounded-pill btn-outline-orange-border d-flex align-items-center justify-content-center text-orange-main fw-bold column-gap-2"
+                            data-bs-toggle="modal" data-bs-target="#filter-modal">
+                            <i class="icon-filter"></i>
+                            Filter
+                        </button>
+                    </div>
+                </div>
+                <!-- End add customer, download, search, filter-->
+
+                <!-- Start Table-->
+                <div id="table" class="mt-3"></div>
+                <!-- End Table-->
+            </div>
+            <!-- End Content-->
+        </div>
+    </div>
+
+    <!-- Start Modal Filter -->
+    <div class="modal fade" id="filter-modal" tabindex="-1" aria-labelledby="Filter Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h1 class="fs-3 fw-bold">Filter</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="date-add">Date Add</label>
+                            <div class="position-relative">
+                                <i class="icon-date position-absolute text-orange-main"></i>
+                                <input type="date" class="form-control mt-2 mt-2" name="date-add" id="date-add"
+                                    placeholder="Date Add">
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <label for="date-birth">Date of Birth</label>
+                            <div class="position-relative">
+                                <i class="icon-date position-absolute text-orange-main"></i>
+                                <input type="date" class="form-control mt-2" name="date-add" id="date-birth"
+                                    placeholder="Date Add">
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <label>Gender</label>
+                            <div class="d-flex align-items-center column-gap-3 mt-1">
+                                <div class="form-check">
+                                    <input class="form-check-input mt-0" type="radio" name="gender" id="all-gender"
+                                        value="all">
+                                    <label class="form-check-label ms-2" for="all-gender">
+                                        All
+                                    </label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input mt-0" type="radio" name="gender" id="male"
+                                        value="male">
+                                    <label class="form-check-label ms-2" for="male">
+                                        Male
+                                    </label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input mt-0" type="radio" name="gender" id="female"
+                                        value="female">
+                                    <label class="form-check-label ms-2" for="female">
+                                        Female
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <label for="added-by">Added By</label>
+                            <input type="text" name="added-by" id="added-by" class="form-control mt-2"
+                                placeholder="Added By">
+                        </div>
+                        <button type="button"
+                            class="btn btn-orange-main text-white fw-bold w-100 rounded-pill mt-3">Apply Filter</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal Filter -->
+
+    <!-- Start Modal Remove Data-->
+    <div class="modal fade" id="remove-customer" tabindex="-1" aria-labelledby="Remove Customer" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h1 class="fs-3 fw-bold">Remove Customer</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">Are You Sure You Want To <br/> Delete Customer <span class="fw-bold">I Gusti Ngurah Agung</span> ?</p>
+
+                    <div class="row align-items-center mt-4">
+                        <div class="col-12 col-md-6">
+                            <button type="button" class="w-100 btn btn-outline-orange-border text-orange-main fw-bold rounded-pill" data-bs-dismiss="modal">Cancel</button>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <button type="button" class="w-100 btn btn-orange-main text-white fw-bold rounded-pill" data-bs-dismiss="modal">Delete Customer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal Remove Data-->
+
+    <script src="./js/grid.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        // Populate data in table
+
+        const { Grid, html } = gridjs;
+        new gridjs.Grid({
+            sort: true,
+            resizeable: true,
+            pagination: true,
+            fixedHeader: true,
+            height: '350px',
+            style: {
+                table: {
+                    'white-space': 'nowrap'
+                },
+                th: {
+                    'background-color': '#E8E8E8',
+                    'color': '#313131'
+                },
+                td: {
+                    'border-right': 'none',
+                    'border-left': 'none'
+                }
+            },
+            columns: [
+                "ID",
+                "Date Add",
+                "Customer Name",
+                "Date of Birth",
+                "Email",
+                "Phone Number",
+                "Gender",
+                "Added By",
+                ""
+            ],
+            data: [
+                [
+                    "AB123CDE",
+                    "12/09/23 09:30",
+                    "I Gusti Ngurah Agung",
+                    "10/10/1998 (25 years)", "agung@example.com",
+                    "+62 812-3456-7890",
+                    "Male",
+                    "Maria",
+                    html(
+                        "<div class='d-flex align-items-center column-gap-2'><button class='btn btn-primary rounded-circle d-flex align-items-center justify-content-center text-white' style='width:36px;height:36px;'><i class='icon-edit'></i></button><button class='btn btn-danger-main rounded-circle d-flex align-items-center justify-content-center text-white' style='width:36px;height:36px;' data-bs-toggle='modal' data-bs-target='#remove-customer'><i class='icon-close'></i></button></div>"
+                    )
+                ],
+                ["XY567PQR", "11/09/23 14:45", "Putri Anindya Wulandari", "07/01/1980 (43 years)", "putri@example.com", "+62 813-9876-5432", "Female", "Siti"],
+                ["LM890STU", "10/09/23 19:15", "Rizky Pramudya", "20/04/1999 (24 years)", "rizky@example.com", "+62 821-2345-6789", "Male", "Rudi"],
+                ["LM890STU", "10/09/23 19:15", "Rizky Pramudya", "20/04/1999 (24 years)", "rizky@example.com", "+62 821-2345-6789", "Male", "Rudi"],
+                ["CD234FGH", "09/09/23 08:20", "Aditya Putra Nugraha", "24/12/1978 (45 years)", "aditya@example.com", "+62 857-8765-4321", "Female", "Maria"],
+                ["OP678IJK", "08/09/23 15:55", "Dewi Sekar Sari", "31/03/1992 (31 years)", "dewi@example.com", "+62 838-7654-3210", "Female", "Siti"],
+
+            ]
+        }).render(document.getElementById("table"));
+    </script>
+</body>
+
+</html>
